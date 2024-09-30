@@ -2,6 +2,8 @@
 require("dotenv").config();
 const mongoose=require("mongoose");
 const session=require("express-session");
+const path=require('path');
+const ejs= require('ejs');
 
 
 // Express----
@@ -28,11 +30,24 @@ application.use((req,res,next)=>{
 })
 
 
+// Template Engine
+application.set('view engine', ejs);
+application.set(express.static(path.join(__dirname,'views')));
+
 
 
 
 // Routing
 
-application.get('/',(req,res)=>{
+application.use('',require('./routes/router'));
 
-});
+
+// Live Server
+
+application.listen(Port,(err)=>{
+    if(err){
+        console.log("There is a problem in the server");
+    }else{
+        console.log(`Server is listning to port ${Port}`);
+    }
+})
