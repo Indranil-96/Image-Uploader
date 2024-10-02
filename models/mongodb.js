@@ -33,4 +33,4 @@ const userschema= new mongoose.Schema({
 });
 
 const ucollection= mongoose.model('ucollection',userschema);
-module.exports+ ucollection;
+module.exports = ucollection;

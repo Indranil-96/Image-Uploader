@@ -1,13 +1,13 @@
 //Acquaring .env file and other ----
 require("dotenv").config();
-const mongoose=require("mongoose");
-const session=require("express-session");
+const mongoose=require('mongoose');
+const session=require('express-session');
 const path=require('path');
 const ejs= require('ejs');
 
 
 // Express----
-const express=require("express");
+const express=require('express');
 
 const application=express();
 const Port= process.env.Port || 5000;
@@ -31,15 +31,16 @@ application.use((req,res,next)=>{
 
 
 // Template Engine
-application.set('view engine', ejs);
-application.set(express.static(path.join(__dirname,'views')));
+application.set('view engine', 'ejs');
+// application.set(express.static(path.join(__dirname,'views')));
+application.set('views',path.join(__dirname,'views'));
 
 
 
 
 // Routing
-
-application.use('',require('./routes/router'));
+const indexrouter=require('./routes/router');
+application.use('/',indexrouter);
 
 
 // Live Server
