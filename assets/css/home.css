@@ -1,0 +1,34 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+
+.form{
+    box-shadow: 10px 10px 5px 0px rgba(209,209,209,0.75);
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(209,209,209,0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(209,209,209,0.75);
+}
+
+
+
+.form h4{
+    background-color: blue;
+    height: 2.2rem;
+    text-align: center;
+}
+
+.butn{
+    height: 2.2rem;
+    width: 100%;
+    text-align: center;
+    background-color: blue;
+    border: none;
+    font-size: larger;
+}
+
+.butn:hover {
+    background-color: rgb(9, 11, 114);
+    transition: all 1s ease-in-out;
+    color: white;
+}

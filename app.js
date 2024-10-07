@@ -32,15 +32,17 @@ application.use((req,res,next)=>{
 
 // Template Engine
 application.set('view engine', 'ejs');
-// application.set(express.static(path.join(__dirname,'views')));
 application.set('views',path.join(__dirname,'views'));
 
-
-
+// Static files
+application.use(express.static(path.join(__dirname,'assets')));
 
 // Routing
 const indexrouter=require('./routes/router');
-application.use('/',indexrouter);
+application.use(indexrouter);
+
+// application.use('/',indexrouter);
+// application.use('',indexrouter);  Both two commented way is effective for route.
 
 
 // Live Server
